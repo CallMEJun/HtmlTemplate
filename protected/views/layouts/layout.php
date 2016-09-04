@@ -37,6 +37,8 @@
     <link href="/assets/libs/jquery-datatables/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="/assets/libs/jquery-datatables/extensions/TableTools/css/dataTables.tableTools.css" rel="stylesheet" type="text/css" />
     <link href="/assets/libs/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/libs/jquery-notifyjs/styles/metro/notify-metro.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/libs/bootstrap-validator/css/bootstrapValidator.min.css" rel="stylesheet" type="text/css" />
     <!-- Extra CSS Libraries End -->
     <link href="/assets/libs/extra/style-responsive.css" rel="stylesheet" />
 </head>
@@ -235,7 +237,7 @@
                 <div id="sidebar-menu">
                     <ul>
                         <li class='has_sub'>
-                            <a href='javascript:void(0);' class="active">
+                            <a href='javascript:void(0);'>
                                 <i class='icon-feather'></i>
                                 <span>UI Elements</span> 
                                 <span class="pull-right">
@@ -261,7 +263,7 @@
                             </ul>
                         </li>
                         <li class="has_sub">
-                            <a href="javascript:void(0);">
+                            <a href="javascript:void(0);" class="active">
                                 <i class="icon-users"></i>
                                 <span>用户管理</span>
                                 <span class="pull-right">
@@ -270,7 +272,7 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href='/user/list'>
+                                    <a href='/user/list' class="active">
                                         <span>用户列表</span>
                                     </a>
                                 </li>
@@ -592,6 +594,11 @@
     <script src="/js/libs/jquery-datatables/js/jquery.dataTables.min.js"></script>
     <script src="/js/libs/jquery-datatables/js/dataTables.bootstrap.js"></script>
     <script src="/js/libs/jquery-datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+    <script src="/js/chelper.js"></script>
+    <script src="/js/libs/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+    <script src="/js/libs/jquery-notifyjs/notify.min.js"></script>
+    <script src="/js/libs/jquery-notifyjs/styles/metro/notify-metro.js"></script>
+    <script src="/js/libs/extra/pages/notifications.js"></script>
     <!-- <script src="/js/libs/extra/pages/datatables.js"></script> -->
     <!-- <script src="/js/libs/extra/pages/index.js"></script> -->
     <script src="/js/libs/extra/pages/advanced-forms.js"></script>

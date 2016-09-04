@@ -15,4 +15,27 @@ class UserProxy extends CProxy{
 		$result = User::model()->findByAttributes(array('id'=>$id,'status'=>1));
 		return $result;
 	}
+
+	public static function update($id,$data){
+		$result = User::model()->findByAttributes(array('id'=>$id,'status'=>1));
+		$result->nickName = $data['nickName'];
+		$result->mobile = $data['mobile'];
+		$result->birthday = $data['birthday'];
+		$result->email = $data['email'];
+		$result->gender = $data['gender'];
+		$result->work = $data['work'];
+		$result->title = $data['title'];
+		$result->company = $data['company'];
+		$result->skills = $data['skills'];
+		$result->interests = $data['interests'];
+		$result->website = $data['website'];
+		$result->wechatid = $data['wechatid'];
+		$result->facebookid = $data['facebookid'];
+		$result->twitterid = $data['twitterid'];
+		$result->linkedinid = $data['linkedinid'];
+		$result->instagramid = $data['instagramid'];
+		$result->description = $data['description'];
+		$result->save();
+		return array('code'=>200);
+	}
 }

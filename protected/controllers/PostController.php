@@ -1,6 +1,7 @@
 <?php 
 class PostController extends Controller{
 	public function actionIndex(){
-		echo CJSON::encode(array('code'=>200));
+		$id = Yii::app()->request->getParam('value');
+		echo CJSON::encode(array('code'=>200,'data'=>$id));
 	}
 }

@@ -43,7 +43,10 @@ $(function(){
                 targets: 4,
                 render: function (a, b, c, d) {
                     var str = '';
+                    str+='<div class="btn-group btn-group-xs">';
                     str+='<a data-toggle="tooltip" title="编辑" class="btn btn-default row-edit" data-id="'+c.id+'"><i class="fa fa-edit"></i></a>';
+                    str+='<a data-toggle="tooltip" title="view" class="btn btn-default row-view" data-id="'+c.id+'"><i class="fa fa-user"></i></a>';
+                    str+='</div>';
                     return str;
                 }
             }
