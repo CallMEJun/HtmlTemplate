@@ -1,0 +1,29 @@
+#edit-order-page table tbody td {
+	padding: 4px;
+	margin: 0;
+}
+#edit-order-page table tbody td input, #edit-order-page table tbody td select {
+	width: 100%;
+	height: 28px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+#edit-order-page table tbody .travel-user-remove {
+	text-align: center;
+	padding: 6px;
+}
+.control-group .delete{
+    color:#000;
+    width:230px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    line-height: 30px;
+    background-color: #aaa;
+    z-index: 999;
+    text-align: center;
+    cursor: pointer;
+    opacity: .8;
+}
