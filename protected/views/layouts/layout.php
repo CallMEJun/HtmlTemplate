@@ -602,5 +602,10 @@
     <!-- <script src="/js/libs/extra/pages/datatables.js"></script> -->
     <!-- <script src="/js/libs/extra/pages/index.js"></script> -->
     <script src="/js/libs/extra/pages/advanced-forms.js"></script>
+    <script type="text/javascript">
+        $('.md-close').on('click',function(){
+            $(this).parents('.md-modal').removeClass('md-show');
+        });
+    </script>
 </body>
 </html>

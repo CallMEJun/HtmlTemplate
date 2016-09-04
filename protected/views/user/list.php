@@ -41,6 +41,24 @@
         <a class='btn row-delete btn-danger btn-mini has-tooltip' _id='{{id}}' title='删除'> <i class='icon-trash'></i> </a>      
     </div>
 </script>
+
+<div class="md-modal md-3d-sign" id="md-3d-sign">
+	<div class="md-content">
+		<h3>Modal Dialog</h3>
+		<div>
+			<p>This is a modal window. You can do the following things with it:</p>
+			<ul>
+				<li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+				<li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+				<li><strong>Close:</strong> click on the button below to close the modal.</li>
+			</ul>
+			<p>
+			<button class="btn btn-danger md-close">Close me!</button>
+			<button class="btn btn-success md-close">Some button</button>
+			</p>
+		</div>
+	</div><!-- End div .md-content -->
+</div>
 <?php
     $cs = Yii::app()->clientScript;
     $js = $this->renderPartial('_listjs', null ,true);

@@ -44,8 +44,9 @@ $(function(){
                 render: function (a, b, c, d) {
                     var str = '';
                     str+='<div class="btn-group btn-group-xs">';
-                    str+='<a data-toggle="tooltip" title="编辑" class="btn btn-default row-edit" data-id="'+c.id+'"><i class="fa fa-edit"></i></a>';
-                    str+='<a data-toggle="tooltip" title="view" class="btn btn-default row-view" data-id="'+c.id+'"><i class="fa fa-user"></i></a>';
+                    str+='<a data-toggle="tooltip" title="编辑" class="btn btn-primary row-edit" data-id="'+c.id+'"><i class="fa fa-edit"></i></a>';
+                    str+='<a data-toggle="tooltip" data-modal="md-3d-sign" title="view" class="md-trigger btn btn-default row-view" data-id="'+c.id+'"><i class="fa fa-user"></i></a>';
+                    str+='<a data-toggle="tooltip" title="delete" class="btn btn-warning row-delete" data-id="'+c.id+'"><i class="fa fa-trash-o"></i></a>';
                     str+='</div>';
                     return str;
                 }
@@ -63,15 +64,21 @@ $(function(){
 		if(_this.hasClass('row-edit')) {
 			location.href = '/user/edit/'+_this.attr('data-id');
 		}else if(_this.hasClass('row-delete')) {
-			$('#modal-tools').attr({_id:_this.attr('_id'), type:'delete'}).modal('show');
+			bootbox.confirm("Are you sure to remove this widget?", function(result) {
+			    if(result === true){
+			      console.log('ok');
+			    }
+			  }); 
 		}else if(_this.hasClass('row-view')) {
-			$('#viewModal').modal({
-				remote: '/user/view?id='+_this.attr('_id')
-			}).on('hidden', function() {
-				$(this).removeData('modal');
-			}).on('hidden.bs.modal', function() {
-			    $(this).removeData('bs.modal');
-			});
+			// $('#md-3d-sign').modal({
+			// 	remote: '/user/view?id='+_this.attr('_id')
+			// }).on('hidden', function() {
+			// 	$(this).removeData('modal');
+			// }).on('hidden.bs.modal', function() {
+			//     $(this).removeData('bs.modal');
+			// });
+			// $('#md-3d-sign').addClass('md-show');
+			location.href = '/user/view';
 		}
 	});
 	
