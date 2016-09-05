@@ -392,7 +392,7 @@
             var url_array = (window.location.href).split('/'),
                 url = '';
             url = "/"+url_array[3]+"/"+url_array[4];
-            console.log(url);
+            // console.log(url);
             $('#sidebar-menu li a.url').each(function(){
                 if(url_array[3] == ''){
                     $('.root').addClass('active');
