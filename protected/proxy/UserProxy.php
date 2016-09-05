@@ -38,4 +38,11 @@ class UserProxy extends CProxy{
 		$result->save();
 		return array('code'=>200);
 	}
+
+	public static function delete($id){
+		$result = User::model()->findByAttributes(array('id'=>$id,'status'=>1));
+		$result->status = 0;
+		$result->save();
+		return array('code'=>200);
+	}
 }

@@ -42,31 +42,40 @@ $(function(){
             {
                 targets: 4,
                 render: function (a, b, c, d) {
-                    var str = '';
-                    str+='<div class="btn-group btn-group-xs">';
-                    str+='<a data-toggle="tooltip" title="编辑" class="btn btn-primary row-edit" data-id="'+c.id+'"><i class="fa fa-edit"></i></a>';
-                    str+='<a data-toggle="tooltip" data-modal="md-3d-sign" title="view" class="md-trigger btn btn-default row-view" data-id="'+c.id+'"><i class="fa fa-user"></i></a>';
-                    str+='<a data-toggle="tooltip" title="delete" class="btn btn-warning row-delete" data-id="'+c.id+'"><i class="fa fa-trash-o"></i></a>';
-                    str+='</div>';
-                    return str;
+                    var data = {id:c.id};
+                    return template('toolTemplate', data);
                 }
             }
         ]
 	});
 	
-	$('#data-table_filter').append($('#actFilterTemplate').html());
-	$('#data-table_filter').on('change', '#act_filter', function(){
-		_table.ajax.reload();
-	});
+	// $('#data-table_filter').append($('#actFilterTemplate').html());
+	// $('#data-table_filter').on('change', '#act_filter', function(){
+	// 	_table.ajax.reload();
+	// });
 	
 	$('#data-table tbody').on('click','.btn', function(){
 		var _this = $(this);
 		if(_this.hasClass('row-edit')) {
 			location.href = '/user/edit/'+_this.attr('data-id');
 		}else if(_this.hasClass('row-delete')) {
-			bootbox.confirm("Are you sure to remove this widget?", function(result) {
+			bootbox.confirm("你确定执行此操作吗?", function(result) {
 			    if(result === true){
-			      console.log('ok');
+			      	CHelper.asynRequest('/user/delete', {id: _this.attr('data-id')}, {
+						before: function(xhr){},
+			            success: function(response){
+			            	notify('success','top center','修改成功',1500);
+			            	setTimeout(function(){
+			            		_table.ajax.reload();
+			            	},1000);
+			            },
+			            failure: function(msg){
+			                notify('error','top center','系统异常，请重试',1500);
+			            },
+			            error: function(){
+			            	notify('error','top center','系统异常，请重试',1500);
+			            }
+					});
 			    }
 			  }); 
 		}else if(_this.hasClass('row-view')) {

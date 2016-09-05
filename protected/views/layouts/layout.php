@@ -59,7 +59,7 @@
             <div class="navbar navbar-default" role="navigation">
                 <div class="container">
                     <div class="navbar-collapse2">
-                        <ul class="nav navbar-nav hidden-xs">
+                        <!-- <ul class="nav navbar-nav hidden-xs">
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th"></i></a>
                                 <div class="dropdown-menu grid-dropdown">
@@ -97,11 +97,11 @@
                                     <li><a href="#">Spanish</a></li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul> -->
                         <ul class="nav navbar-nav navbar-right top-navbar">
                             <li class="dropdown iconify hide-phone">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span class="label label-danger absolute">4</span></a>
-                                <ul class="dropdown-menu dropdown-message">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span class="label label-danger absolute"></span></a>
+                                <!-- <ul class="dropdown-menu dropdown-message">
                                     <li class="dropdown-header notif-header"><i class="icon-bell-2"></i> New Notifications<a class="pull-right" href="#"><i class="fa fa-cog"></i></a></li>
                                     <li class="unread">
                                         <a href="#">
@@ -151,11 +151,11 @@
                                             </div>
                                         </div>
                                     </li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li class="dropdown iconify hide-phone">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="label label-danger absolute">3</span></a>
-                                <ul class="dropdown-menu dropdown-message">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="label label-danger absolute"></span></a>
+                                <!-- <ul class="dropdown-menu dropdown-message">
                                     <li class="dropdown-header notif-header"><i class="icon-mail-2"></i> New Messages</li>
                                     <li class="unread">
                                         <a href="#" class="clearfix">
@@ -179,10 +179,10 @@
                                         </a>
                                     </li>
                                     <li class="dropdown-footer"><div class=""><a href="#" class="btn btn-sm btn-block btn-primary"><i class="fa fa-share"></i> See all messages</a></div></li>
-                                </ul>
+                                </ul> -->
                             </li>
                             <li class="dropdown iconify hide-phone"><a href="#" onclick="javascript:toggle_fullscreen()"><i class="icon-resize-full-2"></i></a></li>
-                            <li class="dropdown topbar-profile">
+                            <!-- <li class="dropdown topbar-profile">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="rounded-image topbar-profile-image"><img src="/images/account-default.png"></span> Jane <strong>Doe</strong> <i class="fa fa-caret-down"></i></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="#">My Profile</a></li>
@@ -193,10 +193,10 @@
                                     <li><a href="lockscreen.html"><i class="icon-lock-1"></i> Lock me</a></li>
                                     <li><a class="md-trigger" data-modal="logout-modal"><i class="icon-logout-1"></i> Logout</a></li>
                                 </ul>
-                            </li>
-                            <li class="right-opener">
+                            </li> -->
+                            <!-- <li class="right-opener">
                                 <a href="javascript:;" class="open-right"><i class="fa fa-angle-double-left"></i><i class="fa fa-angle-double-right"></i></a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                     <!--/.nav-collapse -->
@@ -223,9 +223,9 @@
                     <div class="col-xs-8">
                         <div class="profile-text">Welcome <b><?php echo Yii::app()->user->name?></b></div>
                         <div class="profile-buttons">
-                          <a href="javascript:;"><i class="fa fa-envelope-o pulse"></i></a>
-                          <a href="#connect" class="open-right"><i class="fa fa-comments"></i></a>
-                          <a href="javascript:;" title="Sign Out"><i class="fa fa-power-off text-red-1"></i></a>
+                          <!-- <a href="javascript:;"><i class="fa fa-envelope-o pulse"></i></a> -->
+                          <!-- <a href="#connect" class="open-right"><i class="fa fa-comments"></i></a> -->
+                          <a href="/logout" title="退出登陆"><i class="fa fa-power-off text-red-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -237,33 +237,13 @@
                 <div id="sidebar-menu">
                     <ul>
                         <li class='has_sub'>
-                            <a href='javascript:void(0);'>
+                            <a href='/' class="url root">
                                 <i class='icon-feather'></i>
-                                <span>UI Elements</span> 
-                                <span class="pull-right">
-                                    <i class="fa fa-angle-down"></i>
-                                </span>
+                                <span>主页</span>
                             </a>
-                            <ul>
-                                <li>
-                                    <a href='alerts.html'>
-                                        <span>Alerts</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='buttons.html'>
-                                        <span>Buttons</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='calendar.html'>
-                                        <span>Calendar</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="active">
+                        <li class="has_sub has_child">
+                            <a href="javascript:void(0);" class="">
                                 <i class="icon-users"></i>
                                 <span>用户管理</span>
                                 <span class="pull-right">
@@ -272,7 +252,7 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href='/user/list' class="active">
+                                    <a href='/user/list' class="url">
                                         <span>用户列表</span>
                                     </a>
                                 </li>
@@ -285,207 +265,7 @@
             <div class="clearfix"></div><br><br><br>
         </div>
         <!-- Left Sidebar End -->
-        <!-- Right Sidebar Start -->
-        <div class="right side-menu">
-            <ul class="nav nav-tabs nav-justified" id="right-tabs">
-              <li class="active"><a href="#feed" data-toggle="tab" title="Live Feed"><i class="icon-rss-2"></i></a></li>
-              <li><a href="#connect" data-toggle="tab" title="Chat"><i class="icon-chat"></i></a></li>
-              <li><a href="#settings" data-toggle="tab" title="Preferences"><i class="icon-wrench"></i></a></li>
-            </ul>
-            <div class="clearfix"></div>
-            <div class="tab-content">
-                <div class="tab-pane active" id="feed">
-                    <div class="tab-inner slimscroller">
-                        <div class="search-right">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <div class="right-toolbar">
-                            <a href="javascript:;" class="pull-right">Settings <i class="icon-cog"></i></a>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="panel-group" id="collapse">
-                          <div class="panel panel-default">
-                            <div class="panel-heading bg-orange-1">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#rnotifications">
-                                  <i class="icon-bell-2"></i> Notifications
-                                  <span class="label bg-darkblue-1 pull-right">4</span>
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="rnotifications" class="panel-collapse collapse in">
-                              <div class="panel-body">
-                                <ul class="list-unstyled" id="notification-list">
-                                    <li><a href="javascript:;"><span class="icon-wrapper"><i class="icon-video"></i></span> 1 Video Uploaded <span class="muted">12 minutes ago</span></a></li>
-                                    <li><a href="javascript:;"><span class="icon-wrapper"><i class="icon-users-1"></i></span> 3 Users signed up <span class="muted">16 minutes ago</span></a></li>
-                                    <li><a href="javascript:;"><span class="icon-wrapper"><i class="icon-picture-1"></i></span> 1 Video Uploaded <span class="muted">12 minutes ago</span></a></li>
-                                    <li><a href="javascript:;"><span class="icon-wrapper"><i class="icon-hourglass-1"></i></span> Deadline for 1 project <span class="muted">12 minutes ago</span></a></li>
-                                </ul>
-                                <a class="btn btn-block btn-sm btn-warning">See all notifications</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading bg-green-3">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#remails">
-                                  <i class="icon-mail"></i> E-mails
-                                  <span class="label bg-darkblue-1 pull-right">3</span>
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="remails" class="panel-collapse collapse in">
-                              <div class="panel-body">
-                                <ul class="list-unstyled" id="inbox-list">
-                                    <li><a href="javascript:;"><span class="sender"><i class="icon-star text-yellow-2"></i> Kim Wilde</span> <span class="datetime">6 mins ago</span>
-                                        <span class="title">You keep me hangin on</span>
-                                        <span class="content">Where are you? I am waiting for 3 hours in the restaurant. I ate 3 hamburgers.</span>
-                                    </a></li>
-                                    <li><a href="javascript:;"><span class="sender">Tyler Durden</span> <span class="datetime">13 hours ago</span>
-                                        <span class="title">Buy some soap from market before</span>
-                                        <span class="content">We are crowded here. We need some more soap at home. Buy some before you come home.</span>
-                                    </a></li>
-                                    <li><a href="javascript:;"><span class="sender">John Bonomo</span> <span class="datetime">Yesterday</span>
-                                        <span class="title">Late delivery</span>
-                                        <span class="content">Hello, I ordered 15 box of viagra for a friend of mine but he still hasn't receive them.</span>
-                                    </a></li>
-                                </ul>
-                                <a class="btn btn-block btn-sm btn-primary">Go to inbox</a>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default">
-                            <div class="panel-heading bg-blue-1">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#rupdates">
-                                  <i class="icon-signal-2"></i> Updates
-                                  <span class="label bg-darkblue-1 pull-right">5</span>
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="rupdates" class="panel-collapse collapse in">
-                              <div class="panel-body">
-                                <ul class="list-unstyled" id="updates-list">
-                                    <li><a href="javascript:;"><span class="icon-wrapper bg-green-1"><i class="icon-comment-1"></i></span> <b>David Guetta</b> came online <abbr title="15 seconds ago">just now</abbr>.</a></li>
-                                    <li><a href="javascript:;"><span class="icon-wrapper bg-red-1"><i class="icon-user-3"></i></span> <b>Katy Perry</b> updated her profile <abbr title="4 mins ago">4 mins ago</abbr>.</a></li>
-                                    <li><a href="javascript:;"><span class="icon-wrapper bg-blue-1"><i class="icon-twitter-2"></i></span> <b>4 tweets posted</b> with cronjob <abbr title="22 mins ago">22 mins ago</abbr>.</a></li>
-                                    <li><a href="javascript:;"><span class="icon-wrapper bg-orange-3"><i class="icon-water"></i></span> <b>Adele</b> set fire to the rain <abbr title="43 mins ago">43 mins ago</abbr>.</a></li>
-                                    <li><a href="javascript:;"><span class="icon-wrapper bg-pink-2"><i class="icon-heart-broken"></i></span> <b>Taylor Swift</b> learned that you are trouble <abbr title="3 hours ago">3 days ago</abbr>.</a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane" id="connect">
-                    <div class="tab-inner slimscroller">
-                        <div class="search-right">
-                            <input type="text" class="form-control" placeholder="Search">
-                        </div>  
-                        <div class="panel-group" id="collapse">
-                          <div class="panel panel-default" id="chat-panel">
-                            <div class="panel-heading bg-darkblue-2">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#chat-coll">
-                                  <i class="icon-briefcase-1"></i> Colleagues
-                                  <span class="label bg-darkblue-1 pull-right">14</span>
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="chat-coll" class="panel-collapse collapse in">
-                              <div class="panel-body">
-                                <ul class="list-unstyled" id="chat-list">
-                                    <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/users/chat/1.jpg"></span> <span class="chat-user-name">Dorothy Simons</span><span class="chat-user-msg">I wish I was a bird in the sky</span></a></li>
-                                    <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/users/chat/2.jpg"></span> <span class="chat-user-name">John Malkovich</span><span class="chat-user-msg">You were the traitor</span></a></li>
-                                    <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/users/chat/3.jpg"></span> <span class="chat-user-name">Jessica Simons</span><span class="chat-user-msg">Where is my mind</span></a></li>
-                                    <li><a href="javascript:;" class="away"><span class="chat-user-avatar"><img src="images/users/chat/4.jpg"></span> <span class="chat-user-name">Jack Stallman</span><span class="chat-user-msg">Away since 13:32</span></a></li>
-                                    <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="images/users/chat/5.jpg"></span> <span class="chat-user-name">Neil Armstrong</span><span class="chat-user-msg" title="I am flying to the moon and back">I am flying to the moon and back</span></a></li>
-                                    <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="images/users/chat/6.jpg"></span> <span class="chat-user-name">Hollywood Studios</span><span class="chat-user-msg">Yes he definitely is!</span></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="panel panel-default" id="chat-panel">
-                            <div class="panel-heading bg-darkblue-2">
-                              <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                  <i class="icon-heart-3"></i> Friends
-                                  <span class="label bg-darkblue-1 pull-right">3</span>
-                                </a>
-                              </h4>
-                            </div>
-                            <div id="collapseTwo" class="panel-collapse collapse in">
-                              <div class="panel-body">
-                                <ul class="list-unstyled" id="chat-list">
-                                    <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/users/chat/1.jpg"></span> <span class="chat-user-name">Dorothy Simons</span><span class="chat-user-msg">I wish I was a bird in the sky</span></a></li>
-                                    <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/users/chat/2.jpg"></span> <span class="chat-user-name">John Malkovich</span><span class="chat-user-msg">You were the traitor</span></a></li>
-                                    <li><a href="javascript:;" class="online"><span class="chat-user-avatar"><img src="images/users/chat/3.jpg"></span> <span class="chat-user-name">Jessica Simons</span><span class="chat-user-msg" title="Eminem - The Monster ft. Rihanna"><i class="icon-play"></i> Eminem - The Monster ft. Rihanna</span></a></li>
-                                    <li><a href="javascript:;" class="away"><span class="chat-user-avatar"><img src="images/users/chat/4.jpg"></span> <span class="chat-user-name">Jack Stallman</span><span class="chat-user-msg">Away since 13:32</span></a></li>
-                                    <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="images/users/chat/5.jpg"></span> <span class="chat-user-name">Neil Armstrong</span><span class="chat-user-msg" title="I am flying to the moon and back">I am flying to the moon and back</span></a></li>
-                                    <li><a href="javascript:;" class="offline"><span class="chat-user-avatar"><img src="images/users/chat/6.jpg"></span> <span class="chat-user-name">Hollywood Studios</span><span class="chat-user-msg">Yes he definitely is!</span></a></li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane" id="settings">
-                    <div class="tab-inner slimscroller">
-                        <div class="col-sm-12">
-                            <h3>Preferences</h3>
-                            <div class="row">
-                                <div class="col-xs-8">
-                                    Live data updates
-                                </div>
-                                <div class="col-xs-4">
-                                    <input type="checkbox" class="ios-switch ios-switch-success ios-switch-sm" checked />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8">
-                                    Live feeds
-                                </div>
-                                <div class="col-xs-4">
-                                    <input type="checkbox" class="ios-switch ios-switch-success ios-switch-sm" checked />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8">
-                                    Sync data to cloud
-                                </div>
-                                <div class="col-xs-4">
-                                    <input type="checkbox" class="ios-switch ios-switch-success ios-switch-sm" checked />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-8">
-                                    Keep activity record
-                                </div>
-                                <div class="col-xs-4">
-                                    <input type="checkbox" class="ios-switch ios-switch-danger ios-switch-sm" checked />
-                                </div>
-                            </div>
-                            <h4>Other Settings</h4>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <label class="checkboxw"><input type="checkbox" checked> Autosave settings</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <label class="checkboxw"><input type="checkbox"> Always online</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Right Sidebar End -->
+        
     	<!-- CONTENT -->
         <div class="content-page">
              <div class="content">
@@ -509,7 +289,7 @@
     </div>        
     <!-- Modal End -->
 
-    <div class="md-modal md-3d-flip-vertical" id="task-progress">
+    <!-- <div class="md-modal md-3d-flip-vertical" id="task-progress">
         <div class="md-content">
             <h3><strong>Task Progress</strong> Information</h3>
             <div>
@@ -542,7 +322,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </div> -->
     <script>
         var resizefunc = [];
     </script>
@@ -570,6 +350,7 @@
     <script src="/js/libs/pace/pace.min.js"></script>
     <script src="/js/libs/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="/js/libs/jquery-icheck/icheck.min.js"></script>
+    <script src="/js/template.js"></script>
 
     <!-- Demo Specific JS Libraries -->
     <script src="/js/libs/prettify/prettify.js"></script>
@@ -606,6 +387,35 @@
         $('.md-close').on('click',function(){
             $(this).parents('.md-modal').removeClass('md-show');
         });
+
+        $(function(){
+            var url_array = (window.location.href).split('/'),
+                url = '';
+            url = "/"+url_array[3]+"/"+url_array[4];
+            console.log(url);
+            $('#sidebar-menu li a.url').each(function(){
+                if(url_array[3] == ''){
+                    $('.root').addClass('active');
+                } else if($(this).attr('href') == url){
+                    console.log($(this).attr('href'));
+                    $(this).addClass('active');
+                    $(this).parents('ul').siblings('a').addClass('active').addClass('subdrop');
+                    $(this).parents('ul').css('display','block');
+                    $(this).parents('ul').siblings('a').find('.fa').removeClass('fa-angle-down').addClass('fa-angle-up');
+                }
+            });
+
+            $('#sidebar-menu .has_sub').each(function(){
+                $(this).on('click',function(){
+                    if(!$(this).hasClass('has_child')){
+                        $(this).children('a').addClass('active');
+                        $(this).siblings().children('a').removeClass('active');
+                        var uri = $(this).children('a').attr('href');
+                        location.href = uri;
+                    }
+                });
+            });
+        })
     </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 $(function(){
     // console.log(company)
     $('#country').editable({
-        emptytext: "none",
+        emptytext: "无",
         source: company,
         select2: {
             width: 200,

@@ -19,8 +19,8 @@ function notify(style,position,text,duration) {
         className: style,
         globalPosition:position,
         showAnimation: "show",
-        showDuration: duration || 0,
-        hideDuration: duration || 0,
+        showDuration: 0,
+        hideDuration: 0,
         autoHideDelay: duration,
         autoHide: true,
         clickToHide: true

@@ -1,4 +1,4 @@
-<!-- <h3 style="text-align:center;margin:30px">南翔公司管理平台</h3>
+<h3 style="text-align:center;margin:30px">南翔公司管理平台</h3>
 <div class='row-fluid'>
     <div class='span12 box box-transparent'>
         <div class='row-fluid'>
@@ -20,4 +20,4 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
